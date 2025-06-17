@@ -31,12 +31,6 @@ export default function Page() {
             </li>
           ))}
         </ul>
-
-        <ul>
-          <li>
-            <a href="https://tictactoe-lime-sigma.vercel.app/">Tic-Tac-Toe</a>
-          </li>
-        </ul>
       </div>
       <div className="my-8">
         <BlogPosts />
