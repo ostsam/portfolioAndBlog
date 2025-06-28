@@ -2,25 +2,21 @@ import './global.css'
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
-import { Navbar } from './components/nav';
-
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import Footer from './components/footer'
 import { baseUrl } from './sitemap'
+import ClientLayoutWrapper from './components/client-layout-wrapper'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Sam Ost-Prassad',
+    template: '%s | Sam Ost-Prassad',
   },
-  description: 'This is my portfolio.',
+  description: 'Developer, writer, and creator.',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'Sam Ost-Prassad',
+    description: 'Developer, writer, and creator.',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'Sam Ost-Prassad',
     locale: 'en_US',
     type: 'website',
   },
@@ -53,14 +49,8 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </main>
+      <body className="antialiased">
+        <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
     </html>
   )
