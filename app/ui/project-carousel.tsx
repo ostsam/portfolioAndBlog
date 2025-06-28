@@ -1,6 +1,5 @@
 "use client";
 import { Carousel } from "app/components/carousel";
-import { BorderTrail } from "@/app/components/motion-primitives/border-trail";
 export function CarouselDemo() {
   const slideData = [
     {
