@@ -19,7 +19,7 @@ export function CarouselDemo() {
       title: "Tic-Tac-Toe",
       buttonText: "Visit Project",
       link: "https://tictactoe-lime-sigma.vercel.app",
-      src: "/TicTacToe-Slide.png",
+      src: "/Tictactoe-slide.png",
     },
   ];
   return (
