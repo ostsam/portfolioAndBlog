@@ -1,6 +1,5 @@
 "use client";
 import { Carousel } from "app/components/carousel";
-import { BorderTrail } from "@/app/components/motion-primitives/border-trail";
 export function CarouselDemo() {
   const slideData = [
     {
@@ -19,7 +18,7 @@ export function CarouselDemo() {
       title: "Tic-Tac-Toe",
       buttonText: "Visit Project",
       link: "https://tictactoe-lime-sigma.vercel.app",
-      src: "/TicTacToe-Slide.png",
+      src: "/Tictactoe-slide.png",
     },
   ];
   return (

@@ -1,8 +1,5 @@
 import { BlogPosts } from "app/components/posts";
-import { list } from "./project-list";
 import { CarouselDemo } from "./ui/project-carousel";
-import { BorderTrail } from "@/app/components/motion-primitives/border-trail";
-import { BorderTrailTextarea } from "./components/border-trail";
 
 export default function Page() {
   return (
