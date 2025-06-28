@@ -8,15 +8,15 @@ import ClientLayoutWrapper from './components/client-layout-wrapper'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Sam Ost-Prassad',
-    template: '%s | Sam Ost-Prassad',
+    default: `Sam Osterfeld's Portfolio`,
+    template: `Sam Osterfeld's Portfolio`,
   },
   description: 'Developer, writer, and creator.',
   openGraph: {
-    title: 'Sam Ost-Prassad',
+    title: 'Sam Osterfeld',
     description: 'Developer, writer, and creator.',
     url: baseUrl,
-    siteName: 'Sam Ost-Prassad',
+    siteName: 'Sam Osterfeld',
     locale: 'en_US',
     type: 'website',
   },
