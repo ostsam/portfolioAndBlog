@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { Navbar } from './components/nav';
-import { ScrollProgress } from './components/motion-primitives/scroll-progress';
+
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
@@ -53,27 +53,14 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
-      <body className="antialiased">
-        <div className='pointer-events-none sticky top-0 left-0 w-full z-10'>
-          <div className='absolute left-0 top-0 h-0.5 w-full bg-neutral-200 dark:bg-[#111111]' />
-          <ScrollProgress
-            className='absolute top-0 h-0.5 bg-[linear-gradient(to_right,transparent,#0090FF_75%,#0090FF_100%)]'
-            springOptions={{
-              stiffness: 280,
-              damping: 18,
-              mass: 0.3,
-            }}
-          />
-        </div>
-        <div className="max-w-xl mx-4 mt-8 lg:mx-auto">
-          <main className="flex flex-col flex-1 px-4 md:px-0">
-            <Navbar />
-            {children}
-            <Footer />
-            <Analytics />
-            <SpeedInsights />
-          </main>
-        </div>
+      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
+        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+          <Navbar />
+          {children}
+          <Footer />
+          <Analytics />
+          <SpeedInsights />
+        </main>
       </body>
     </html>
   )
