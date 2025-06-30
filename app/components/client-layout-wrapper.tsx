@@ -6,7 +6,7 @@ import { Navbar } from './nav';
 import Footer from './footer';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-///
+
 export default function ClientLayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isBlogPost = pathname.startsWith('/blog/') && pathname.split('/').length > 2;
