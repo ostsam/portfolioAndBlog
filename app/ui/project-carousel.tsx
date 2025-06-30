@@ -22,11 +22,11 @@ export function CarouselDemo() {
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center py-8">
+    <div className="flex flex-col items-center justify-center py-10">
       <h1 className="text-5xl hover:animate-pulse font-semibold tracking-tighter">
         What I've shipped
       </h1>
-      <div className="relative overflow-hidden w-full h-full mv-20 pt-5 pb-14 px-10">
+      <div className="relative overflow-hidden mv-20 pt-5 pb-14 px-10">
         <Carousel slides={slideData} />
       </div>
     </div>
