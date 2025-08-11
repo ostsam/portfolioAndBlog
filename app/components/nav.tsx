@@ -32,9 +32,7 @@ export function Navbar() {
 	return (
 		<nav
 			className={`sticky top-0 z-50 -mx-5 md:-mx-8 lg:-mx-10 px-5 md:px-8 lg:px-10 py-4 mb-12 transition-all duration-200 border-b border-neutral-200 dark:border-neutral-800 ${
-				isScrolled
-					? "backdrop-blur-sm bg-background/70"
-					: ""
+				isScrolled ? "backdrop-blur-sm bg-background/70" : ""
 			}`}
 		>
 			<div className="flex flex-row items-center justify-between">
