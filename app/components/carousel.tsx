@@ -4,9 +4,13 @@ import Image from "next/image";
 
 interface SlideData {
 	title: string;
+	description?: string;
 	buttonText: string;
 	link?: string;
-	src: string; // URL to the image
+	src: string;
+	tech?: string[];
+	metric?: string;
+	github?: string;
 }
 
 interface SlideProps {
@@ -63,12 +67,23 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
 		event.currentTarget.style.opacity = "1";
 	};
 
-	const { src, buttonText, title, link } = slide;
+	const { src, buttonText, title, link, description, tech, metric, github } =
+		slide;
 	return (
 		<li
 			ref={slideRef}
-			className="[perspective:1200px] [transform-style:preserve-3d] flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10"
+			className="[perspective:1200px] [transform-style:preserve-3d] flex flex-1 flex-col items-center justify-start relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10"
+			role="listitem"
+			tabIndex={current === index ? 0 : -1}
+			aria-selected={current === index}
+			aria-label={`Project ${index + 1} of ${3}: ${title}`}
 			onClick={() => handleSlideClick(index)}
+			onKeyDown={(e) => {
+				if (e.key === "Enter" || e.key === " ") {
+					e.preventDefault();
+					handleSlideClick(index);
+				}
+			}}
 			onMouseMove={handleMouseMove}
 			onMouseLeave={handleMouseLeave}
 			style={{
@@ -81,7 +96,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
 			}}
 		>
 			<div
-				className="absolute top-0 left-0 w-full h-full bg-[#1D1F2F] rounded-[1%] overflow-hidden transition-all duration-150 ease-out"
+				className="absolute top-0 left-0 w-full h-full bg-neutral-900 rounded-xl overflow-hidden transition-all duration-300 ease-out shadow-2xl ring-1 ring-white/10"
 				style={{
 					transform:
 						current === index
@@ -90,48 +105,84 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
 				}}
 			>
 				<Image
-					className="absolute inset-0 w-[120%] h-[120%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
+					className="absolute inset-0 w-[120%] h-[120%] object-cover transition-all duration-300 ease-out"
 					style={{
-						opacity: current === index ? 1 : 0.5,
+						opacity: current === index ? 1 : 0.6,
+						transform: current === index ? "scale(1.02)" : "scale(1)",
 					}}
-					alt={title}
+					alt={`Screenshot of ${title} project showing the user interface`}
 					src={src}
 					fill
 					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
 					priority={index === 0}
+					quality={90}
+					placeholder="blur"
+					blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
 					onLoad={imageLoaded}
 				/>
 				{current === index && (
-					<div className="absolute inset-0 bg-black/30 transition-all duration-1000" />
+					<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-all duration-500" />
 				)}
 			</div>
 
 			<article
-				className={`relative p-[4vmin] transition-opacity duration-1000 ease-in-out ${
+				className={`relative pt-[2vmin] px-[4vmin] pb-[4vmin] transition-opacity duration-1000 ease-in-out ${
 					current === index ? "opacity-100 visible" : "opacity-0 invisible"
 				}`}
 			>
-				<h2 className="text-lg md:text-2xl lg:text-4xl font-semibold  relative">
-					{title}
-				</h2>
-				<div className="flex justify-center">
-					{link ? (
-						<a
-							href={link}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="mt-6 px-4 py-2 w-fit mx-auto sm:text-sm text-black bg-white h-12 border border-transparent text-xs flex justify-center items-center rounded-2xl hover:shadow-lg transition duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
-						>
-							{buttonText}
-						</a>
-					) : (
-						<button
-							aria-label={buttonText}
-							className="mt-6 px-4 py-2 w-fit mx-auto sm:text-sm text-black bg-white h-12 border border-transparent text-xs flex justify-center items-center rounded-2xl hover:shadow-lg transition duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
-						>
-							{buttonText}
-						</button>
+				<div className="text-center space-y-4">
+					{tech && (
+						<div className="flex flex-wrap justify-center gap-2">
+							{tech.map((item, i) => (
+								<span
+									key={i}
+									className="px-3 py-1.5 text-xs font-medium text-white bg-black/60 rounded-full backdrop-blur-md border border-black/20 shadow-lg"
+								>
+									{item}
+								</span>
+							))}
+						</div>
 					)}
+					<div className="space-y-2">
+						<h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white tracking-tight">
+							{title}
+						</h3>
+						{description && (
+							<p className="text-sm text-white/90 max-w-[40ch] mx-auto leading-relaxed">
+								{description}
+							</p>
+						)}
+					</div>
+					<div className="pt-1 space-y-4">
+						{metric && (
+							<p className="text-xs text-white/70 font-medium tracking-wide uppercase">
+								{metric}
+							</p>
+						)}
+						{link && (
+							<a
+								href={link}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-flex items-center px-6 py-3 text-sm font-semibold bg-white text-neutral-900 rounded-full hover:bg-white/95 hover:shadow-xl transition-all duration-200 hover:-translate-y-1 hover:scale-105 shadow-lg"
+							>
+								{buttonText}
+								<svg
+									className="ml-2 w-4 h-4"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth={2}
+										d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+									/>
+								</svg>
+							</a>
+						)}
+					</div>
 				</div>
 			</article>
 		</li>
@@ -207,7 +258,10 @@ export function Carousel({ slides }: CarouselProps) {
 	return (
 		<div
 			className="relative w-[70vmin] h-[70vmin] mx-auto"
+			role="region"
 			aria-roledescription="carousel"
+			aria-live="polite"
+			aria-label="Project showcase"
 		>
 			<ul
 				role="list"
