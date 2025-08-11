@@ -1,1 +1,0 @@
-2025-08-11: Added `blog-revamp.md` detailing an 8-step minimalist, premium redesign plan (visual system, layout rhythm, motion, project/case studies, blog reading, nav/footer, theming/a11y, finishing touches). Created session report in `.cursor/rules/reports/20250811-blog-revamp.md`.
