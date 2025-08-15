@@ -459,6 +459,188 @@ button:focus-visible,
 		.progress-bar {
 			display: none !important;
 		}
+
+		/* CV-specific print styles for professional resume layout */
+		.print-hide {
+			display: none !important;
+		}
+
+		/* Page setup */
+		@page {
+			margin: 0.75in;
+			size: letter;
+			@top-left {
+				content: none;
+			}
+			@top-center {
+				content: none;
+			}
+			@top-right {
+				content: none;
+			}
+			@bottom-left {
+				content: none;
+			}
+			@bottom-center {
+				content: none;
+			}
+			@bottom-right {
+				content: none;
+			}
+		}
+
+		/* Body and layout adjustments */
+		body {
+			font-size: 11pt !important;
+			line-height: 1.3 !important;
+			color: #000 !important;
+			background: white !important;
+		}
+
+		/* Single column layout for print */
+		.print-layout {
+			display: block !important;
+			max-width: none !important;
+			grid-template-columns: none !important;
+			gap: 0 !important;
+		}
+
+		/* Adjust spacing for print */
+		.print-section {
+			margin-bottom: 1rem !important;
+			page-break-inside: avoid;
+		}
+
+		/* Header adjustments */
+		.print-header h1 {
+			font-size: 24pt !important;
+			margin-bottom: 0.25rem !important;
+			font-weight: 600 !important;
+		}
+
+		.print-header p {
+			font-size: 10pt !important;
+			margin-bottom: 0.5rem !important;
+		}
+
+		/* Contact info in header */
+		.print-contact {
+			display: flex !important;
+			flex-wrap: wrap !important;
+			gap: 0.75rem !important;
+			font-size: 9pt !important;
+			margin-bottom: 1rem !important;
+			justify-content: center !important;
+		}
+
+		.print-contact span {
+			white-space: nowrap !important;
+		}
+
+		/* Section headings */
+		.print-section h2 {
+			font-size: 14pt !important;
+			font-weight: 600 !important;
+			margin-bottom: 0.5rem !important;
+			margin-top: 1rem !important;
+			border-bottom: 1px solid #333 !important;
+			padding-bottom: 0.125rem !important;
+		}
+
+		/* Job titles and dates */
+		.print-job-header {
+			display: flex !important;
+			justify-content: space-between !important;
+			align-items: baseline !important;
+			margin-bottom: 0.25rem !important;
+		}
+
+		.print-job-header h3 {
+			font-size: 12pt !important;
+			font-weight: 500 !important;
+		}
+
+		.print-job-header .date {
+			font-size: 10pt !important;
+			color: #666 !important;
+		}
+
+		/* Lists */
+		.print-list {
+			margin-left: 1rem !important;
+			margin-bottom: 0.5rem !important;
+		}
+
+		.print-list li {
+			font-size: 10pt !important;
+			margin-bottom: 0.125rem !important;
+			line-height: 1.2 !important;
+		}
+
+		/* Skills section - make badges text-only */
+		.print-skills {
+			display: flex !important;
+			flex-wrap: wrap !important;
+			gap: 0.5rem !important;
+		}
+
+		.print-skill-item {
+			font-size: 10pt !important;
+			padding: 0.125rem 0.25rem !important;
+			border: 1px solid #ccc !important;
+			border-radius: 0.125rem !important;
+			display: inline-block !important;
+			position: relative !important;
+		}
+
+		/* Hide icons and hover elements in print */
+		.print-skill-item svg,
+		.print-skill-item span:not(.sr-only) {
+			display: none !important;
+		}
+
+		/* Show only the print text labels */
+		.print-skill-item span.sr-only {
+			display: inline !important;
+			position: static !important;
+			width: auto !important;
+			height: auto !important;
+			padding: 0 !important;
+			margin: 0 !important;
+			overflow: visible !important;
+			clip: auto !important;
+			white-space: normal !important;
+		}
+
+		/* Projects section */
+		.print-project {
+			margin-bottom: 0.75rem !important;
+		}
+
+		.print-project h3 {
+			font-size: 11pt !important;
+			font-weight: 500 !important;
+			margin-bottom: 0.125rem !important;
+		}
+
+		.print-project p {
+			font-size: 9pt !important;
+			margin-bottom: 0.25rem !important;
+		}
+
+		/* Force page breaks */
+		.page-break-before {
+			page-break-before: always !important;
+		}
+
+		.page-break-after {
+			page-break-after: always !important;
+		}
+
+		/* Avoid page breaks */
+		.no-page-break {
+			page-break-inside: avoid !important;
+		}
 	}
 }
 
