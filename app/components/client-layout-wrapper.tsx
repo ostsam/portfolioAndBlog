@@ -47,15 +47,21 @@ export default function ClientLayoutWrapper({
 
 	return (
 		<>
-			{isBlogPost && <ProgressBar />}
+			{isBlogPost && (
+				<div className="print-hide">
+					<ProgressBar />
+				</div>
+			)}
 			<div className="mx-auto max-w-[1200px] px-5 md:px-8 lg:px-10">
-				<Navbar />
+				<div className="print-hide">
+					<Navbar />
+				</div>
 				<AnimatePresence mode="wait">
 					<motion.main
 						key={pathname}
 						id="main-content"
 						tabIndex={-1}
-						className="flex-auto min-w-0 flex flex-col space-y-24 md:space-y-28"
+						className="flex-auto min-w-0 flex flex-col space-y-24 md:space-y-28 print:space-y-0"
 						initial={{ opacity: 0, y: 8 }}
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -4 }}
@@ -65,7 +71,9 @@ export default function ClientLayoutWrapper({
 						{children}
 					</motion.main>
 				</AnimatePresence>
-				<Footer />
+				<div className="print-hide">
+					<Footer />
+				</div>
 				<Analytics />
 				<SpeedInsights />
 			</div>
