@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Print utilities */
+@media print {
+	.print-hide {
+		display: none !important;
+	}
+}
+
 @custom-variant dark (&:is(.dark *));
 
 ::selection {
