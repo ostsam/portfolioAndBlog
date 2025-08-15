@@ -50,7 +50,7 @@ export default function ContactPage() {
 	};
 
 	return (
-		<section className="max-w-2xl">
+		<section className="max-w-2xl animate-in fade-in duration-1000">
 			<div className="mb-12">
 				<p className="uppercase tracking-wide text-xs text-neutral-500 dark:text-neutral-400 mb-3">
 					Contact
@@ -66,7 +66,7 @@ export default function ContactPage() {
 
 			<form
 				onSubmit={handleSubmit}
-				className="space-y-6"
+				className="space-y-6 animate-in slide-in-from-bottom-4 duration-1000 delay-200"
 				action="https://formspree.io/f/mvgqlped"
 				method="POST"
 			>

@@ -30,7 +30,7 @@ export function CarouselDemo() {
 	];
 
 	return (
-		<div className="flex flex-col items-center justify-center py-10">
+		<div className="flex flex-col items-center justify-center">
 			<div className="text-center mb-12">
 				<p className="kicker mb-1">Recent Work</p>
 				<h2 className="text-4xl md:text-5xl font-semibold tracking-tighter mb-4">

@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function Page() {
 	return (
-		<section>
+		<section className="animate-in fade-in duration-1000">
 			<div className="mb-12">
 				<p className="kicker mb-3">Writing</p>
 				<h1 className="font-semibold text-3xl md:text-4xl mb-4 tracking-tighter">
@@ -18,7 +18,9 @@ export default function Page() {
 					sense of it all.
 				</p>
 			</div>
-			<BlogPosts />
+			<div className="animate-in slide-in-from-bottom-4 duration-1000 delay-200">
+				<BlogPosts />
+			</div>
 		</section>
 	);
 }

@@ -637,9 +637,7 @@ export default function Page() {
 											Shrinked.ai (Ongoing)
 										</h4>
 										<ul className="list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
-											<li>
-												TBD :)
-											</li>
+											<li>TBD :)</li>
 										</ul>
 									</div>
 								</div>

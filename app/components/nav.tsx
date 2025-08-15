@@ -34,11 +34,11 @@ export function Navbar() {
 
 	return (
 		<nav
-			className={`sticky top-0 z-50 -mx-5 md:-mx-8 lg:-mx-10 px-5 md:px-8 lg:px-10 py-4 mb-12 transition-all duration-200 border-b border-neutral-200 dark:border-neutral-800 ${
-				isScrolled ? "backdrop-blur-sm bg-background/70" : ""
+			className={`fixed top-0 left-0 right-0 z-50 px-5 md:px-8 lg:px-10 py-4 transition-all duration-200 border-b border-neutral-200 dark:border-neutral-800 ${
+				isScrolled ? "backdrop-blur-md bg-background/90" : "bg-background"
 			}`}
 		>
-			<div className="flex flex-row items-center justify-between">
+			<div className="mx-auto max-w-[1200px] flex flex-row items-center justify-between">
 				<div className="flex flex-row items-center space-x-0">
 					{Object.entries(navItems).map(([path, { name }]) => {
 						const isActive = pathname === path;
@@ -49,20 +49,22 @@ export function Navbar() {
 								className={`relative py-2 px-3 text-sm transition-colors duration-180 hover:text-foreground ${
 									isActive
 										? "text-foreground after:absolute after:left-3 after:-bottom-1 after:h-0.5 after:w-[calc(100%-24px)] after:bg-accent after:transition-all"
-										: "text-muted-foreground"
+										: "text-muted-foreground hover:underline hover:underline-offset-2"
 								}`}
+								style={{ cursor: "pointer" }}
 							>
 								{name}
 							</Link>
 						);
 					})}
 				</div>
-				<div className="hidden md:flex items-center gap-4">
+				<div className="flex items-center gap-4">
 					<a
 						href="https://github.com/ostsam"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+						className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 hover:underline hover:underline-offset-2"
+						style={{ cursor: "pointer" }}
 					>
 						GitHub
 					</a>

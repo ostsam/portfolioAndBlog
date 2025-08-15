@@ -52,16 +52,16 @@ export default function ClientLayoutWrapper({
 					<ProgressBar />
 				</div>
 			)}
-			<div className="mx-auto max-w-[1200px] px-5 md:px-8 lg:px-10">
-				<div className="print-hide">
-					<Navbar />
-				</div>
+			<div className="print-hide">
+				<Navbar />
+			</div>
+			<div className="mx-auto max-w-[1200px] px-5 md:px-8 lg:px-10 pt-24 print:pt-0">
 				<AnimatePresence mode="wait">
 					<motion.main
 						key={pathname}
 						id="main-content"
 						tabIndex={-1}
-						className="flex-auto min-w-0 flex flex-col space-y-24 md:space-y-28 print:space-y-0"
+						className="flex-auto min-w-0 flex flex-col space-y-24 md:space-y-28 print:space-y-0 print:pt-0"
 						initial={{ opacity: 0, y: 8 }}
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -4 }}
