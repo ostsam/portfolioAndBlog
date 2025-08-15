@@ -168,8 +168,5 @@ export const resumeData = {
 		},
 	],
 
-	additionalInformation: [
-		"Public speaking at academic and community events; experience presenting to diverse audiences.",
-		"Proven ability to self-learn complex technical subjects and apply them in real-world projects.",
-	],
+	additionalInformation: [],
 };

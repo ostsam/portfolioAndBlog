@@ -338,17 +338,6 @@ export default function Page() {
 						))}
 					</div>
 				</section>
-
-				<section className="animate-in slide-in-from-bottom-4 duration-1000 delay-300 mb-12">
-					<h2 className="text-2xl md:text-3xl font-semibold tracking-tighter mb-6">
-						Additional Information
-					</h2>
-					<ul className="list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
-						{resumeData.additionalInformation.map((info, index) => (
-							<li key={index}>{info}</li>
-						))}
-					</ul>
-				</section>
 			</div>
 
 			{/* Contact Sidebar */}

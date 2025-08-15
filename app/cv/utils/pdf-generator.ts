@@ -364,14 +364,6 @@ export async function generatePDF() {
 			currentY = addText(edu.degree, margin, currentY);
 		});
 
-		// Additional Information
-		addSection("Additional Information");
-
-		// Generate additional information from data
-		resumeData.additionalInformation.forEach((info) => {
-			addBulletPoint(info);
-		});
-
 		// Remove loading overlay
 		document.body.removeChild(loadingOverlay);
 
