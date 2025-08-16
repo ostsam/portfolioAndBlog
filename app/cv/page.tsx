@@ -352,8 +352,8 @@ export default function Page() {
 						<p className="text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3">
 							Contact
 						</p>
-						<div className="space-y-2 text-sm">
-							<p className="text-neutral-600 dark:text-neutral-300">
+						<div className="space-y-2 text-med">
+							<p className="text-neutral-600 dark:text-neutral-300 mb-1.5">
 								📍 {resumeData.personalInfo.location}
 							</p>
 							<ObfuscatedEmail />
