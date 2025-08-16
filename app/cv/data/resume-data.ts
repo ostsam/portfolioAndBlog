@@ -116,8 +116,8 @@ export const resumeData = {
 			title: "Substitute Teacher – NYCDOE",
 			dates: "Dec 2022 – May 2025",
 			responsibilities: [
-				"Delivered dynamic, real-time instruction to classes of up to 30 students, adapting complex material for diverse learners—skills directly applicable to technical communication and end-user education.",
-				"Integrated online tools to facilitate interactive lessons, improving participation rates by 25%.",
+				"Instructed classes of up to 30 students, adapting complex material for diverse learners.",
+				"Integrated online tools to facilitate interactive lessons.",
 			],
 		},
 		{
