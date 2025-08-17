@@ -95,14 +95,7 @@ export default function Page() {
 								rel="noopener noreferrer"
 								className="cursor-pointer text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
 							>
-								🌐{" "}
-								{resumeData.personalInfo.portfolio
-									.replace(".vercel.app", "")
-									.charAt(0)
-									.toUpperCase() +
-									resumeData.personalInfo.portfolio
-										.replace(".vercel.app", "")
-										.slice(1)}
+								🌐 Malan
 							</Link>
 							<Link
 								href={`https://${resumeData.personalInfo.github}`}
@@ -363,7 +356,7 @@ export default function Page() {
 								rel="noopener noreferrer"
 								className="cursor-pointer block text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
 							>
-								🌐 {resumeData.personalInfo.portfolio}
+								🌐 Malan
 							</Link>
 							<Link
 								href={`https://${resumeData.personalInfo.github}`}
@@ -371,7 +364,7 @@ export default function Page() {
 								rel="noopener noreferrer"
 								className="cursor-pointer block text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
 							>
-								💻 {resumeData.personalInfo.github}
+								💻 GitHub
 							</Link>
 							<Link
 								href={`https://${resumeData.personalInfo.linkedin}`}
@@ -379,7 +372,7 @@ export default function Page() {
 								rel="noopener noreferrer"
 								className="cursor-pointer block text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
 							>
-								🔗 {resumeData.personalInfo.linkedin}
+								🔗 LinkedIn
 							</Link>
 						</div>
 					</div>
