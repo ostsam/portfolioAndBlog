@@ -7,7 +7,7 @@ export function CarouselDemo() {
 			title: "Malan Language Tutor",
 			description: "AI-powered conversation practice for language learners",
 			buttonText: "Live Demo",
-			link: "https://malan.vercel.app/",
+			link: "https://www.malan.chat/",
 			src: "/Malan-Slide.png",
 			tech: ["TypeScript", "Next.js", "Tailwind", "OpenAI API"],
 		},

@@ -4,7 +4,7 @@ export const resumeData = {
 		name: "Sam Osterfeld",
 		location: "New York, NY",
 		email: "ost.sam@gmail.com",
-		portfolio: "malan.vercel.app",
+		portfolio: "https://www.malan.chat",
 		github: "github.com/ostsam",
 		linkedin: "linkedin.com/in/sam-osterfeld",
 	},
@@ -86,7 +86,7 @@ export const resumeData = {
 		projects: [
 			{
 				title: "Malan",
-				url: "https://malan.vercel.app",
+				url: "https://www.malan.chat",
 				technologies: "TypeScript, Next.js, Tailwind, SQL, OpenAI API, Vercel",
 				description:
 					"Malan is a speaking-first AI-powered language learning suite which empowers users to learn 57 different languages. Where most language learning apps on the market today are gamified tapping games, Malan throws the user right into the language learning experience by expecting them to speak from the first conversation. Users are helpfully aided by the built in dictionary and the latest FSRS algorithm to maximize vocabulary retention.",

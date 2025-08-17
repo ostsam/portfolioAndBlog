@@ -19,7 +19,7 @@ export function BrandBadge({
 	return (
 		<div className="relative group">
 			<div
-				className={`inline-flex items-center justify-center w-8 h-8 rounded-md transition-all duration-200 cursor-pointer hover:scale-110 hover:bg-neutral-100 dark:hover:bg-neutral-800 ${
+				className={`inline-flex items-center justify-center w-8 h-8 rounded-md transition-all duration-200 hover:scale-110 hover:bg-neutral-100 dark:hover:bg-neutral-800 ${
 					outlineOnDark ? "dark:[filter:drop-shadow(0_0_1px_#ffffff)]" : ""
 				}`}
 				onMouseEnter={() => setIsHovered(true)}
