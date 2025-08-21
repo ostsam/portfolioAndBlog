@@ -54,7 +54,7 @@ export default function Page() {
 		<div className="lg:grid lg:grid-cols-[1fr_240px] lg:gap-12 print-layout">
 			<div className="lg:col-start-1">
 				<section className="animate-in fade-in duration-1000 text-center lg:text-left mb-8 lg:mb-16 print-header print-section">
-					<p className="kicker mb-3 print-hide">Resume</p>
+					<p className="kicker mb-3 print-hide">Résumé</p>
 					<h1 className="mb-2 lg:mb-4 text-4xl md:text-5xl font-semibold tracking-tighter title">
 						{resumeData.personalInfo.name}
 					</h1>
