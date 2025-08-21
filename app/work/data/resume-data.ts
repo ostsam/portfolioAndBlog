@@ -95,7 +95,7 @@ export const resumeData = {
 		internshipExperience: [
 			{
 				company: "SupplyCo AI",
-				dates: "July 2025",
+				dates: "Jul 2025",
 				responsibilities: [
 					"Implemented a self-onboarding flow for new users.",
 					"Added trial mode to the platform.",

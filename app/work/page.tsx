@@ -268,9 +268,14 @@ export default function Page() {
 								{resumeData.fractalAIAccelerator.internshipExperience.map(
 									(internship, index) => (
 										<div key={index}>
-											<h4 className="text-base font-medium tracking-tight mb-2">
-												{internship.company} ({internship.dates})
-											</h4>
+											<div className="flex items-center justify-between mb-2">
+												<h4 className="text-base font-medium tracking-tight">
+													{internship.company}
+												</h4>
+												<span className="text-sm text-neutral-500 dark:text-neutral-400">
+													{internship.dates}
+												</span>
+											</div>
 											<ul className="list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
 												{internship.responsibilities.map(
 													(responsibility, respIndex) => (
@@ -293,19 +298,21 @@ export default function Page() {
 					<div className="space-y-6">
 						{resumeData.professionalExperience.map((job, index) => (
 							<div key={index}>
-								<div className="flex flex-col md:flex-row md:items-baseline md:justify-between">
-									<h3 className="text-lg font-medium tracking-tight">
-										{job.title}
-									</h3>
-									<p className="text-sm text-neutral-500 dark:text-neutral-400">
-										{job.dates}
-									</p>
-								</div>
-								<ul className="list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300 mt-2">
-									{job.responsibilities.map((responsibility, respIndex) => (
-										<li key={respIndex}>{responsibility}</li>
-									))}
-								</ul>
+								<details>
+									<summary className="cursor-pointer list-none relative pl-5 flex items-center justify-between before:content-['▶'] before:absolute before:left-0 before:text-sm before:transition-transform before:duration-200 [details[open]_&]:before:rotate-90">
+										<span className="text-lg font-medium tracking-tight">
+											{job.title}
+										</span>
+										<span className="text-sm text-neutral-500 dark:text-neutral-400">
+											{job.dates}
+										</span>
+									</summary>
+									<ul className="list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300 mt-2">
+										{job.responsibilities.map((responsibility, respIndex) => (
+											<li key={respIndex}>{responsibility}</li>
+										))}
+									</ul>
+								</details>
 							</div>
 						))}
 					</div>

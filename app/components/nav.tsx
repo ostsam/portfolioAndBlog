@@ -11,8 +11,8 @@ const navItems = {
 	"/blog": {
 		name: "blog",
 	},
-	"/cv": {
-		name: "cv",
+	"/work": {
+		name: "resume",
 	},
 	"/contact": {
 		name: "contact",
