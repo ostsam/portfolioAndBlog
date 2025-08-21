@@ -23,13 +23,17 @@ export function ObfuscatedEmail() {
 	};
 
 	return (
-		<span
-			onClick={handleEmailClick}
+		<a
+			href="#"
+			onClick={(e) => {
+				e.preventDefault();
+				handleEmailClick();
+			}}
 			onMouseEnter={() => setEmailRevealed(true)}
 			onMouseLeave={() => setEmailRevealed(false)}
 			className="cursor-pointer text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
 		>
 			✉️ {emailRevealed ? "ost.sam@gmail.com" : "Contact Me"}
-		</span>
+		</a>
 	);
 }
