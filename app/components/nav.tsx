@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { SiGithub } from "react-icons/si";
 
 const navItems = {
 	"/": {
@@ -63,10 +64,11 @@ export function Navbar() {
 						href="https://github.com/ostsam"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 hover:underline hover:underline-offset-2"
+						className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
 						style={{ cursor: "pointer" }}
+						aria-label="GitHub Profile"
 					>
-						GitHub
+						<SiGithub className="w-5 h-5" />
 					</a>
 				</div>
 			</div>

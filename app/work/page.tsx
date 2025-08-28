@@ -19,13 +19,32 @@ import {
 	SiAdobelightroom,
 	SiGraphite,
 	SiGooglegemini,
+	SiLinkedin,
 } from "react-icons/si";
+import Image from "next/image";
 import Link from "next/link";
 import { PDFDownloadButton } from "./components/PDFDownloadButton";
 import { BrandBadge } from "./components/BrandBadge";
 import { ObfuscatedEmail } from "./components/ObfuscatedEmail";
 import { generatePDF } from "./utils/pdf-generator";
 import { resumeData } from "./data/resume-data";
+import { createContext, useContext } from "react";
+
+// Custom disclosure triangle component
+function DisclosureTriangle() {
+	return (
+		<svg
+			className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground dark:text-white transition-transform duration-200 [details[open]_&]:rotate-90"
+			width="16"
+			height="16"
+			viewBox="0 0 16 16"
+			fill="currentColor"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path d="M6 2L12 8L6 14V2Z" />
+		</svg>
+	);
+}
 
 // Icon mapping for dynamic badge generation
 const iconMap = {
@@ -63,7 +82,16 @@ export default function Page() {
 					<div className="hidden print-contact">
 						<span>📍 {resumeData.personalInfo.location}</span>
 						<span>✉️ {resumeData.personalInfo.email}</span>
-						<span>🌐 {resumeData.personalInfo.portfolio}</span>
+						<span>
+							<Image
+								src="/malan-logo.svg"
+								alt="Malan Logo"
+								width={12}
+								height={12}
+								className="inline-block mr-1 w-4 h-4 brightness-0"
+							/>
+							{resumeData.personalInfo.portfolio}
+						</span>
 						<span>
 							💻 {resumeData.personalInfo.github.replace("github.com/", "")}
 						</span>
@@ -95,7 +123,16 @@ export default function Page() {
 								rel="noopener noreferrer"
 								className="cursor-pointer text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
 							>
-								🌐 Malan
+								<span className="flex items-center gap-1.5">
+									<Image
+										src="/malan-logo.svg"
+										alt="Malan Logo"
+										width={16}
+										height={16}
+										className="w-4 h-4 dark:invert brightness-0"
+									/>
+									Malan
+								</span>
 							</Link>
 							<Link
 								href={`https://${resumeData.personalInfo.github}`}
@@ -103,7 +140,10 @@ export default function Page() {
 								rel="noopener noreferrer"
 								className="cursor-pointer text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
 							>
-								💻 GitHub
+								<span className="flex items-center gap-1.5">
+									<SiGithub className="w-4 h-4" />
+									GitHub
+								</span>
 							</Link>
 							<Link
 								href={`https://${resumeData.personalInfo.linkedin}`}
@@ -111,7 +151,10 @@ export default function Page() {
 								rel="noopener noreferrer"
 								className="cursor-pointer text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
 							>
-								🔗 LinkedIn
+								<span className="flex items-center gap-1.5">
+									<SiLinkedin className="w-4 h-4" />
+									LinkedIn
+								</span>
 							</Link>
 						</div>
 					</div>
@@ -242,7 +285,7 @@ export default function Page() {
 													href={project.url}
 													target="_blank"
 													rel="noopener noreferrer"
-													className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200 hover:underline hover:underline-offset-2 cursor-pointer"
+													className="hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200 hover:underline hover:underline-offset-2 cursor-pointer"
 												>
 													{project.title} ↗
 												</Link>
@@ -268,8 +311,8 @@ export default function Page() {
 								{resumeData.fractalAIAccelerator.internshipExperience.map(
 									(internship, index) => (
 										<div key={index}>
-											<div className="flex items-center justify-between mb-2">
-												<h4 className="text-base font-medium tracking-tight">
+											<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+												<h4 className="text-base font-medium tracking-tight mb-1 sm:mb-0">
 													{internship.company}
 												</h4>
 												<span className="text-sm text-neutral-500 dark:text-neutral-400">
@@ -299,13 +342,16 @@ export default function Page() {
 						{resumeData.professionalExperience.map((job, index) => (
 							<div key={index}>
 								<details>
-									<summary className="cursor-pointer list-none relative pl-5 flex items-center justify-between before:content-['▸'] before:absolute before:left-0 before:text-sm before:text-foreground dark:before:text-white before:transition-transform before:duration-200 [details[open]_&]:before:rotate-90">
-										<span className="text-lg font-medium tracking-tight">
-											{job.title}
-										</span>
-										<span className="text-sm text-neutral-500 dark:text-neutral-400">
-											{job.dates}
-										</span>
+									<summary className="cursor-pointer list-none relative pl-6">
+										<DisclosureTriangle />
+										<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full">
+											<span className="text-lg font-medium tracking-tight mb-1 sm:mb-0 hover:animate-pulse">
+												{job.title}
+											</span>
+											<span className="text-sm text-neutral-500 dark:text-neutral-400">
+												{job.dates}
+											</span>
+										</div>
 									</summary>
 									<ul className="list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300 mt-2">
 										{job.responsibilities.map((responsibility, respIndex) => (
@@ -326,9 +372,9 @@ export default function Page() {
 						{resumeData.education.map((edu, index) => (
 							<div
 								key={index}
-								className="flex flex-col md:flex-row md:items-baseline md:justify-between"
+								className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between"
 							>
-								<h3 className="text-lg font-medium tracking-tight">
+								<h3 className="text-lg font-medium tracking-tight mb-1 sm:mb-0">
 									{edu.institution}
 								</h3>
 								<p className="text-sm text-neutral-500 dark:text-neutral-400">
@@ -342,9 +388,9 @@ export default function Page() {
 
 			{/* Contact Sidebar */}
 			<aside className="lg:col-start-2 lg:row-start-1 animate-in slide-in-from-bottom-4 duration-1000 delay-100 print-hide">
-				<div className="lg:sticky lg:top-8 space-y-6 text-center lg:text-left">
+				<div className="lg:sticky lg:top-10 space-y-6 text-center lg:text-left">
 					{/* PDF Download Button */}
-					<div className="hidden lg:block">
+					<div className="hidden lg:block lg:sticky lg:top-0 lg:pt-8 lg:bg-background lg:z-10">
 						<PDFDownloadButton onDownload={generatePDF} className="w-full" />
 					</div>
 
@@ -363,7 +409,16 @@ export default function Page() {
 								rel="noopener noreferrer"
 								className="cursor-pointer block text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
 							>
-								🌐 Malan
+								<span className="flex items-center gap-1.5">
+									<Image
+										src="/malan-logo.svg"
+										alt="Malan Logo"
+										width={16}
+										height={16}
+										className="w-4 h-4 dark:invert brightness-0"
+									/>
+									Malan
+								</span>
 							</Link>
 							<Link
 								href={`https://${resumeData.personalInfo.github}`}
@@ -371,7 +426,10 @@ export default function Page() {
 								rel="noopener noreferrer"
 								className="cursor-pointer block text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
 							>
-								💻 GitHub
+								<span className="flex items-center gap-1.5">
+									<SiGithub className="w-4 h-4" />
+									GitHub
+								</span>
 							</Link>
 							<Link
 								href={`https://${resumeData.personalInfo.linkedin}`}
@@ -379,7 +437,10 @@ export default function Page() {
 								rel="noopener noreferrer"
 								className="cursor-pointer block text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
 							>
-								🔗 LinkedIn
+								<span className="flex items-center gap-1.5">
+									<SiLinkedin className="w-4 h-4" />
+									LinkedIn
+								</span>
 							</Link>
 						</div>
 					</div>
