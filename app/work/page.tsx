@@ -299,7 +299,7 @@ export default function Page() {
 						{resumeData.professionalExperience.map((job, index) => (
 							<div key={index}>
 								<details>
-									<summary className="cursor-pointer list-none relative pl-5 flex items-center justify-between before:content-['▶'] before:absolute before:left-0 before:text-sm before:transition-transform before:duration-200 [details[open]_&]:before:rotate-90">
+									<summary className="cursor-pointer list-none relative pl-5 flex items-center justify-between before:content-['▸'] before:absolute before:left-0 before:text-sm before:text-foreground dark:before:text-white before:transition-transform before:duration-200 [details[open]_&]:before:rotate-90">
 										<span className="text-lg font-medium tracking-tight">
 											{job.title}
 										</span>
