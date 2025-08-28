@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="210px" height="133px" viewBox="0 0 210 133" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>The_M</title>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="-4.1209507e-13%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#2A1A6F" offset="0%"></stop>
+            <stop stop-color="#F4F2E8" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-Copy" transform="translate(-476, -44)" fill-rule="nonzero">
+            <g id="The_M" transform="translate(477.0468, 44.8)">
+                <polygon id="Path-Copy-7" fill="#170664" points="45.9532356 131.441379 75.1094047 131.441379 81.4873167 86.5310345 81.7910268 86.5310345 103.658154 132.2 125.52528 86.5310345 125.828991 86.5310345 132.206903 131.441379 161.363072 131.441379 146.329422 22.2 123.551165 22.2 103.658154 64.6827586 84.3725626 22.2 61.5943055 22.2"></polygon>
+                <g id="noun-sound-wave-7000778-copy-3" transform="translate(0, 31.4337)" fill="url(#linearGradient-1)" stroke="#170D45" stroke-opacity="0.574847028" stroke-width="0.5">
+                    <path d="M4.82375667,49.2212376 L11.8237567,49.2212376 L11.8237567,28.2212376 L4.82375667,28.2212376 L4.82375667,49.2212376 Z M18.8078279,60.0188434 L25.8078279,60.0188434 L25.8078279,15.0188434 L18.8078279,15.0188434 L18.8078279,60.0188434 Z M33.1460503,74.3163667 L43.1460503,74.3163667 L43.1460503,2.3163667 L33.1460503,2.3163667 L33.1460503,74.3163667 Z" id="Shape-Copy" transform="translate(23.9849, 38.3164) rotate(8) translate(-23.9849, -38.3164)"></path>
+                    <path d="M164.823757,49.2212376 L171.823757,49.2212376 L171.823757,28.2212376 L164.823757,28.2212376 L164.823757,49.2212376 Z M178.807828,60.0188434 L185.807828,60.0188434 L185.807828,15.0188434 L178.807828,15.0188434 L178.807828,60.0188434 Z M193.14605,74.3163667 L203.14605,74.3163667 L203.14605,2.3163667 L193.14605,2.3163667 L193.14605,74.3163667 Z" id="Shape-Copy-2" transform="translate(183.9849, 38.3164) scale(-1, 1) rotate(8) translate(-183.9849, -38.3164)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

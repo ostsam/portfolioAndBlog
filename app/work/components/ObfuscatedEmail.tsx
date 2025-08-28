@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 
-export function ObfuscatedEmail() {
+interface ObfuscatedEmailProps {
+	className?: string;
+	compact?: boolean;
+}
+
+export function ObfuscatedEmail({
+	className = "",
+	compact = false,
+}: ObfuscatedEmailProps) {
 	const [emailRevealed, setEmailRevealed] = useState(false);
 
 	const handleEmailClick = () => {
@@ -31,9 +39,10 @@ export function ObfuscatedEmail() {
 			}}
 			onMouseEnter={() => setEmailRevealed(true)}
 			onMouseLeave={() => setEmailRevealed(false)}
-			className="cursor-pointer text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
+			className={`cursor-pointer text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2 ${className}`}
 		>
-			✉️ {emailRevealed ? "ost.sam@gmail.com" : "Contact Me"}
+			✉️{" "}
+			{emailRevealed ? "ost.sam@gmail.com" : compact ? "Email" : "Contact Me"}
 		</a>
 	);
 }
