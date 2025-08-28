@@ -30,6 +30,91 @@ import { generatePDF } from "./utils/pdf-generator";
 import { resumeData } from "./data/resume-data";
 import { createContext, useContext } from "react";
 
+// Reusable contact link component to reduce duplication
+interface ContactLinkProps {
+	href: string;
+	icon: React.ReactNode;
+	text: string;
+	className?: string;
+}
+
+function ContactLink({ href, icon, text, className = "" }: ContactLinkProps) {
+	return (
+		<Link
+			href={href}
+			target="_blank"
+			rel="noopener noreferrer"
+			className={`cursor-pointer text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2 ${className}`}
+		>
+			<span className="flex items-center gap-1.5">
+				{icon}
+				<span className={className}>{text}</span>
+			</span>
+		</Link>
+	);
+}
+
+// ContactLinks component that can be reused
+function ContactLinks({
+	layout = "vertical",
+	showLocation = true,
+	isMobile = false,
+}: {
+	layout?: "vertical" | "horizontal";
+	showLocation?: boolean;
+	isMobile?: boolean;
+}) {
+	const malaLogo = (
+		<Image
+			src="/malan-logo.svg"
+			alt="Malan Logo"
+			width={16}
+			height={16}
+			className="w-4 h-4 dark:invert brightness-0"
+		/>
+	);
+
+	const githubIcon = <SiGithub className="w-4 h-4" />;
+	const linkedinIcon = <SiLinkedin className="w-4 h-4" />;
+
+	const containerClass =
+		layout === "vertical"
+			? "space-y-2"
+			: "flex flex-wrap justify-center gap-x-4 gap-y-3";
+
+	const linkClass = layout === "vertical" ? "block" : "";
+	const textClass = isMobile ? "text-[13px]" : ""; // Custom size between xs (12px) and sm (14px)
+
+	return (
+		<div className={containerClass}>
+			{showLocation && (
+				<p className="text-neutral-600 dark:text-neutral-300 mb-1.5">
+					📍 {resumeData.personalInfo.location}
+				</p>
+			)}
+			<ObfuscatedEmail className={textClass} compact={isMobile} />
+			<ContactLink
+				href={`https://${resumeData.personalInfo.portfolio}`}
+				icon={malaLogo}
+				text="Malan"
+				className={`${linkClass} ${textClass}`}
+			/>
+			<ContactLink
+				href={`https://${resumeData.personalInfo.github}`}
+				icon={githubIcon}
+				text="GitHub"
+				className={`${linkClass} ${textClass}`}
+			/>
+			<ContactLink
+				href={`https://${resumeData.personalInfo.linkedin}`}
+				icon={linkedinIcon}
+				text="LinkedIn"
+				className={`${linkClass} ${textClass}`}
+			/>
+		</div>
+	);
+}
+
 // Custom disclosure triangle component
 function DisclosureTriangle() {
 	return (
@@ -115,48 +200,11 @@ export default function Page() {
 						<p className="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3">
 							Contact
 						</p>
-						<div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm">
-							<ObfuscatedEmail />
-							<Link
-								href={`https://${resumeData.personalInfo.portfolio}`}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="cursor-pointer text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
-							>
-								<span className="flex items-center gap-1.5">
-									<Image
-										src="/malan-logo.svg"
-										alt="Malan Logo"
-										width={16}
-										height={16}
-										className="w-4 h-4 dark:invert brightness-0"
-									/>
-									Malan
-								</span>
-							</Link>
-							<Link
-								href={`https://${resumeData.personalInfo.github}`}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="cursor-pointer text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
-							>
-								<span className="flex items-center gap-1.5">
-									<SiGithub className="w-4 h-4" />
-									GitHub
-								</span>
-							</Link>
-							<Link
-								href={`https://${resumeData.personalInfo.linkedin}`}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="cursor-pointer text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
-							>
-								<span className="flex items-center gap-1.5">
-									<SiLinkedin className="w-4 h-4" />
-									LinkedIn
-								</span>
-							</Link>
-						</div>
+						<ContactLinks
+							layout="horizontal"
+							showLocation={false}
+							isMobile={true}
+						/>
 					</div>
 				</section>
 
@@ -398,51 +446,7 @@ export default function Page() {
 						<p className="text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3">
 							Contact
 						</p>
-						<div className="space-y-2 text-med">
-							<p className="text-neutral-600 dark:text-neutral-300 mb-1.5">
-								📍 {resumeData.personalInfo.location}
-							</p>
-							<ObfuscatedEmail />
-							<Link
-								href={`https://${resumeData.personalInfo.portfolio}`}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="cursor-pointer block text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
-							>
-								<span className="flex items-center gap-1.5">
-									<Image
-										src="/malan-logo.svg"
-										alt="Malan Logo"
-										width={16}
-										height={16}
-										className="w-4 h-4 dark:invert brightness-0"
-									/>
-									Malan
-								</span>
-							</Link>
-							<Link
-								href={`https://${resumeData.personalInfo.github}`}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="cursor-pointer block text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
-							>
-								<span className="flex items-center gap-1.5">
-									<SiGithub className="w-4 h-4" />
-									GitHub
-								</span>
-							</Link>
-							<Link
-								href={`https://${resumeData.personalInfo.linkedin}`}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="cursor-pointer block text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
-							>
-								<span className="flex items-center gap-1.5">
-									<SiLinkedin className="w-4 h-4" />
-									LinkedIn
-								</span>
-							</Link>
-						</div>
+						<ContactLinks layout="vertical" />
 					</div>
 				</div>
 			</aside>
