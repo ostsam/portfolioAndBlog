@@ -379,6 +379,108 @@ button:focus-visible,
 	}
 }
 
+/* Fix for disclosure triangles in work experience */
+details summary {
+	position: relative;
+}
+
+details summary::-webkit-details-marker {
+	display: none;
+}
+
+details[open] > summary svg,
+details[open] > summary .disclosure-triangle {
+	transform: rotate(90deg);
+}
+
+.disclosure-triangle {
+	transform: rotate(0deg);
+	transform-origin: center;
+	display: block;
+}
+
+/* CSS triangle fallback for environments where SVG might not render properly */
+.disclosure-triangle-fallback {
+	width: 0;
+	height: 0;
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-left: 8px solid currentColor;
+	transform-origin: 25% center;
+}
+
+/* Show fallback if SVG fails to load */
+svg.disclosure-triangle:not(:defined) {
+	display: none;
+}
+
+svg.disclosure-triangle:not(:defined) + .disclosure-triangle-fallback {
+	display: block;
+}
+
+/* Ensure rotate works for fallback too */
+details[open] > summary .disclosure-triangle-fallback {
+	transform: rotate(90deg);
+}
+
+/* Job details styling */
+.job-details-container {
+	position: relative;
+}
+
+.job-details {
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	transition:
+		background-color 0.2s ease,
+		border-color 0.2s ease;
+	overflow: hidden;
+}
+
+.job-details summary {
+	position: relative;
+	transition: background-color 0.2s ease;
+	border-bottom: none;
+}
+
+.job-details:not([open]) {
+	border-radius: var(--radius);
+}
+
+.job-details:hover {
+	background-color: rgba(0, 0, 0, 0.01);
+}
+
+.dark .job-details:hover {
+	background-color: rgba(255, 255, 255, 0.01);
+}
+
+.job-details summary:hover {
+	background-color: rgba(0, 0, 0, 0.03);
+}
+
+.dark .job-details summary:hover {
+	background-color: rgba(255, 255, 255, 0.03);
+}
+
+.job-details[open] {
+	background-color: rgba(0, 0, 0, 0.01);
+}
+
+.dark .job-details[open] {
+	background-color: rgba(255, 255, 255, 0.01);
+}
+
+.job-details[open] summary {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background-color: rgba(0, 0, 0, 0.02);
+}
+
+.dark .job-details[open] summary {
+	background-color: rgba(255, 255, 255, 0.02);
+}
+
 @layer base {
 	* {
 		border-color: theme("colors.border");
