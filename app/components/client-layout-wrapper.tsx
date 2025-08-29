@@ -38,12 +38,13 @@ export default function ClientLayoutWrapper({
 		};
 	}, []);
 
-	useEffect(() => {
-		// Only move focus on keyboard navigation to avoid showing focus ring on mouse nav
-		if (!lastInputWasKeyboard) return;
-		const el = document.getElementById("main-content");
-		if (el) el.focus({ preventScroll: true });
-	}, [pathname, lastInputWasKeyboard]);
+	// Temporarily disabled focus management
+	// useEffect(() => {
+	// 	// Only move focus on keyboard navigation to avoid showing focus ring on mouse nav
+	// 	if (!lastInputWasKeyboard) return;
+	// 	const el = document.getElementById("main-content");
+	// 	if (el) el.focus({ preventScroll: true });
+	// }, [pathname, lastInputWasKeyboard]);
 
 	return (
 		<>
@@ -56,21 +57,12 @@ export default function ClientLayoutWrapper({
 				<Navbar />
 			</div>
 			<div className="mx-auto max-w-[1200px] px-5 md:px-8 lg:px-10 pt-24 print:pt-0">
-				<AnimatePresence mode="wait">
-					<motion.main
-						key={pathname}
-						id="main-content"
-						tabIndex={-1}
-						className="flex-auto min-w-0 flex flex-col space-y-24 md:space-y-28 print:space-y-0 print:pt-0"
-						initial={{ opacity: 0, y: 8 }}
-						animate={{ opacity: 1, y: 0 }}
-						exit={{ opacity: 0, y: -4 }}
-						transition={{ duration: 0.2, ease: [0.2, 0.7, 0.2, 1] }}
-						style={{ willChange: "opacity, transform" }}
-					>
-						{children}
-					</motion.main>
-				</AnimatePresence>
+				<main
+					id="main-content"
+					className="flex-auto min-w-0 flex flex-col space-y-24 md:space-y-28 print:space-y-0 print:pt-0"
+				>
+					{children}
+				</main>
 				<div className="print-hide">
 					<Footer />
 				</div>
