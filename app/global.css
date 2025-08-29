@@ -384,8 +384,16 @@ details summary {
 	position: relative;
 }
 
-details summary::-webkit-details-marker {
+/* Remove default disclosure triangles in all browsers */
+details summary::-webkit-details-marker,
+details summary::marker {
 	display: none;
+	content: "";
+}
+
+/* Additional Firefox support */
+details summary {
+	list-style: none;
 }
 
 details[open] > summary svg,
@@ -399,27 +407,21 @@ details[open] > summary .disclosure-triangle {
 	display: block;
 }
 
-/* CSS triangle fallback for environments where SVG might not render properly */
-.disclosure-triangle-fallback {
+/* Pure CSS triangle that works across all platforms */
+.css-triangle {
 	width: 0;
 	height: 0;
-	border-top: 6px solid transparent;
-	border-bottom: 6px solid transparent;
-	border-left: 8px solid currentColor;
-	transform-origin: 25% center;
-}
-
-/* Show fallback if SVG fails to load */
-svg.disclosure-triangle:not(:defined) {
-	display: none;
-}
-
-svg.disclosure-triangle:not(:defined) + .disclosure-triangle-fallback {
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 7px solid currentColor;
+	transform-origin: 30% center;
+	transition: transform 0.2s ease;
+	opacity: 0.9;
 	display: block;
 }
 
-/* Ensure rotate works for fallback too */
-details[open] > summary .disclosure-triangle-fallback {
+/* Rotate triangle when details are open */
+details[open] > summary .css-triangle {
 	transform: rotate(90deg);
 }
 
