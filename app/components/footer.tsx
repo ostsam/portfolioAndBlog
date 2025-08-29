@@ -3,7 +3,7 @@ import { SiRss } from "react-icons/si";
 export default function Footer() {
 	return (
 		<footer className="mt-16">
-			<div className="border-t border-neutral-200 dark:border-neutral-800 pt-12 pb-8">
+			<div className="border-t border-neutral-200 dark:border-neutral-800 pt-4 pb-4">
 				<div className="text-center space-y-6">
 					{/* Main CTA */}
 					<div className="space-y-2">
@@ -33,7 +33,7 @@ export default function Footer() {
 					</div>
 
 					{/* Copyright */}
-					<div className="pt-6 border-t border-neutral-200 dark:border-neutral-800">
+					<div className="pt-4 border-t border-neutral-200 dark:border-neutral-800">
 						<p className="text-xs text-neutral-500 dark:text-neutral-400">
 							© {new Date().getFullYear()} Sam Osterfeld
 						</p>
