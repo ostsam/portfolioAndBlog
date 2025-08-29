@@ -10,7 +10,7 @@ export const resumeData = {
 	},
 
 	professionalSummary:
-		"I am a full-stack engineer with a humanities background who transitioned into tech to build impactful solutions to real-world problems. I've built production-scale applications with 1000+ hours of intensive development experience. Architected and deployed a 100K-line language learning platform serving 500+ users across 57 languages with 8GB of optimized data. Reduced critical system latencies by 10x through database optimization and eliminated manual bottlenecks that blocked revenue growth.",
+		"I am a full-stack engineer with a humanities background who transitioned into tech to build impactful solutions to real-world problems. I've built production-scale applications with 1000+ hours of intensive development experience. Architected and deployed Malan, a 100K-line language learning platform serving 500+ users across 57 languages with 8GB of optimized data. Reduced critical system latencies by 10x through database optimization and eliminated manual bottlenecks that blocked revenue growth.",
 
 	technicalSkills: {
 		languagesFrameworks: [
