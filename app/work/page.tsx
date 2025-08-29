@@ -64,7 +64,7 @@ function ContactLinks({
 	showLocation?: boolean;
 	isMobile?: boolean;
 }) {
-	const malaLogo = (
+	const malanLogo = (
 		<Image
 			src="/malan-logo.svg"
 			alt="Malan Logo"
@@ -95,7 +95,7 @@ function ContactLinks({
 			<ObfuscatedEmail className={textClass} compact={isMobile} />
 			<ContactLink
 				href={`https://${resumeData.personalInfo.portfolio}`}
-				icon={malaLogo}
+				icon={malanLogo}
 				text="Malan"
 				className={`${linkClass} ${textClass}`}
 			/>
@@ -191,7 +191,7 @@ export default function Page() {
 					</p>
 
 					{/* Mobile contact links */}
-					<div className="lg:hidden mt-6 text-center print-hide">
+					<div className="lg:hidden mt-116 text-center print-hide">
 						{/* Mobile PDF Download Button */}
 						<div className="mb-6">
 							<PDFDownloadButton onDownload={generatePDF} />

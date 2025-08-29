@@ -99,8 +99,8 @@ export const resumeData = {
 				responsibilities: [
 					"Implemented a self-onboarding flow for new users.",
 					"Added trial mode to the platform.",
-					"Added email drip campaigns with cron jobs based on leads generated from the platform.",
-					"Mobile website optimization.",
+					"Added email drip campaigns with cron jobs based on leads generated for the users.",
+					"Created a mobile-friendly interface for the platform.",
 				],
 			},
 			{
