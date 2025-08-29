@@ -10,7 +10,7 @@ export const resumeData = {
 	},
 
 	professionalSummary:
-		"I am a full-stack engineer with a humanities background who transitioned into tech to build impactful solutions to real-world problems. I built production-scale applications with 1000+ hours of intensive development experience. Architected and deployed a 100K-line language learning platform serving 500+ users across 57 languages with 8GB of optimized data. Reduced critical system latencies by 10x through database optimization and eliminated manual bottlenecks that blocked revenue growth.",
+		"I am a full-stack engineer with a humanities background who transitioned into tech to build impactful solutions to real-world problems. I've built production-scale applications with 1000+ hours of intensive development experience. Architected and deployed a 100K-line language learning platform serving 500+ users across 57 languages with 8GB of optimized data. Reduced critical system latencies by 10x through database optimization and eliminated manual bottlenecks that blocked revenue growth.",
 
 	technicalSkills: {
 		languagesFrameworks: [
@@ -98,7 +98,7 @@ export const resumeData = {
 				dates: "Jul 2025",
 				responsibilities: [
 					"Eliminated founder bottleneck by implementing self-service onboarding flow, directly enabling revenue growth (previously required manual account creation for each customer).",
-					"Reduced dashboard load times by 10x (20-30 seconds → 2-3 seconds) through PostgreSQL index optimization, fixing critical performance bug.",
+					"Reduced dashboard load times by 10x (30 seconds → 3 seconds) through PostgreSQL index optimization, fixing critical performance bug.",
 					"Transformed desktop-only platform into mobile-responsive application, capturing previously inaccessible web traffic.",
 					"Built automated email drip campaigns with cron jobs for lead nurturing, replacing manual follow-ups.",
 				],
@@ -107,7 +107,8 @@ export const resumeData = {
 				company: "Shrinked.ai",
 				dates: "Ongoing",
 				responsibilities: [
-					"Currently building a powerful AI context management system, details forthcoming.",
+					"Refining the data enrichment system for the context management platform, allowing for the ingestion of many different kinds of data for the purposes of creating an AI platform free of hallucinations.",
+					"Creating a chess data ingestion system as a proof of concept for the context management platform, allowing users to query the database for higher-level chess analysis and reports derived therefrom.",
 				],
 			},
 		],
@@ -115,19 +116,19 @@ export const resumeData = {
 
 	professionalExperience: [
 		{
-			title: "Substitute Teacher – NYCDOE",
+			title: "Teacher – NYCDOE",
 			dates: "Dec 2022 – May 2025",
 			responsibilities: [
-				"Instructed classes of up to 30 students, adapting complex material for diverse learners.",
-				"Integrated online tools to facilitate interactive lessons.",
+				"Taught social studies and science to classes of 30 students while completing 200+ hours of self-directed software development (EloquentJS, Full Stack Open curriculum).",
+				"Integrated digital tools and online platforms to facilitate interactive lessons, developing technical skills that directly informed later software development.",
 			],
 		},
 		{
 			title: "Intake Assistant – Crocus Home Care",
 			dates: "Aug 2020 – Dec 2022",
 			responsibilities: [
-				"Digitized and streamlined client intake processes, reducing data entry errors by 15% and accelerating onboarding timelines.",
-				"Coordinated with cross-functional teams to ensure data accuracy, compliance, and client satisfaction.",
+				"Reduced data entry errors by 15% through process digitization and workflow optimization, directly improving client onboarding efficiency.",
+				"Coordinated cross-functional teams across 3 departments to ensure data accuracy and compliance, managing client satisfaction for 200 clients.",
 			],
 		},
 		{
@@ -142,17 +143,17 @@ export const resumeData = {
 			title: "Arabic Language Teaching Assistant – Columbia University",
 			dates: "Aug 2017 – May 2019",
 			responsibilities: [
-				"Graded the homework of students studying Arabic on a daily basis.",
-				"Offered personalized feedback during office hours.",
+				"Provided personalized feedback and instruction to 60+ students studying Arabic, developing systematic approaches to language instruction.",
+				"Graded and evaluated daily homework assignments, maintaining consistent quality standards across multiple proficiency levels.",
 			],
 		},
 		{
 			title: "Volunteer Content & Social Media Manager – Are You Syrious?",
 			dates: "Mar 2016 – Jun 2019",
 			responsibilities: [
-				"Automated content workflows and managed social media campaigns, scaling Facebook audience from zero to 40K+ organically.",
+				"Scaled Facebook audience from zero to 40,000+ followers organically through content strategy and community engagement.",
 				"Led cross-border volunteer team, providing training and quality control for digital publications, reducing revision cycles by 30%.",
-				"Wrote and edited grant proposals that secured funding for on-the-ground operations.",
+				"Secured $20,000+ in grant funding through proposal writing and editing, directly supporting on-the-ground humanitarian operations in Croatia.",
 			],
 		},
 	],
