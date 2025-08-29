@@ -115,29 +115,13 @@ function ContactLinks({
 	);
 }
 
-// Custom disclosure triangle component
+// Custom disclosure triangle component - CSS-only implementation for cross-platform compatibility
 function DisclosureTriangle() {
 	return (
-		<>
-			{/* SVG triangle for modern browsers */}
-			<svg
-				className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground dark:text-white transition-transform duration-200 disclosure-triangle"
-				width="16"
-				height="16"
-				viewBox="0 0 16 16"
-				fill="currentColor"
-				xmlns="http://www.w3.org/2000/svg"
-				style={{ minWidth: "16px", minHeight: "16px" }}
-			>
-				<path d="M6 2L12 8L6 14V2Z" fill="currentColor" />
-			</svg>
-
-			{/* Fallback triangle using CSS for older browsers */}
-			<div
-				className="hidden absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground dark:text-white transition-transform duration-200 disclosure-triangle-fallback"
-				aria-hidden="true"
-			/>
-		</>
+		<div
+			className="absolute left-2 top-1/2 -translate-y-1/2 h-0 w-0 pointer-events-none css-triangle"
+			aria-hidden="true"
+		/>
 	);
 }
 
@@ -400,7 +384,7 @@ export default function Page() {
 						{resumeData.professionalExperience.map((job, index) => (
 							<div key={index} className="job-details-container">
 								<details className="group relative job-details">
-									<summary className="cursor-pointer list-none relative pl-6 py-1 flex flex-col sm:flex-row sm:items-center sm:justify-between w-full">
+									<summary className="cursor-pointer list-none relative pl-8 py-1 flex flex-col sm:flex-row sm:items-center sm:justify-between w-full">
 										<DisclosureTriangle />
 										<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full pr-2">
 											<span className="text-lg font-medium tracking-tight mb-1 sm:mb-0 hover:animate-pulse">

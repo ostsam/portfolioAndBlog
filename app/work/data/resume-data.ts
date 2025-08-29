@@ -10,7 +10,7 @@ export const resumeData = {
 	},
 
 	professionalSummary:
-		"I am a full-stack developer with a humanities background who transitioned into tech to build impactful solutions to real-world problems. I am candid about gaps, relentless about closing them, and biased toward deployment.",
+		"I am a full-stack engineer with a humanities background who transitioned into tech to build impactful solutions to real-world problems. I built production-scale applications with 1000+ hours of intensive development experience. Architected and deployed a 100K-line language learning platform serving 500+ users across 57 languages with 8GB of optimized data. Reduced critical system latencies by 10x through database optimization and eliminated manual bottlenecks that blocked revenue growth.",
 
 	technicalSkills: {
 		languagesFrameworks: [
@@ -77,7 +77,7 @@ export const resumeData = {
 		dates: "Jun 2025 – Aug 2025",
 		overview: {
 			description:
-				"The Fractal AI Accelerator is an intensive 70 hour per week program focused on AI-driven web development and deployment. Comprehensive training in modern full-stack technologies, AI integration, and rapid prototyping methodologies.",
+				"Intensive 70-hour/week program (840+ hours total) building production applications with modern full-stack technologies and AI integration.",
 			links: {
 				website: "https://fractalbootcamp.com/",
 				curriculum: "https://github.com/fractal-bootcamp/bootcamp-monorepo",
@@ -89,7 +89,7 @@ export const resumeData = {
 				url: "https://www.malan.chat",
 				technologies: "TypeScript, Next.js, Tailwind, SQL, OpenAI API, Vercel",
 				description:
-					"Malan is a speaking-first AI-powered language learning suite which empowers users to learn 57 different languages. Where most language learning apps on the market today are gamified tapping games, Malan throws the user right into the language learning experience by expecting them to speak from the first conversation. Users are helpfully aided by the built in dictionary and the latest FSRS algorithm to maximize vocabulary retention.",
+					"Architected and deployed production-scale language learning platform (100K lines of code) serving 500+ active users across 57 languages. Processed 7,500+ AI-powered conversations with sub-second latency through Opus audio optimization. Built 8GB PostgreSQL database with optimized vocabulary storage and implemented FSRS spaced repetition algorithm for retention. Reduced API costs through prompt optimization while maintaining conversation quality.",
 			},
 		],
 		internshipExperience: [
@@ -97,16 +97,18 @@ export const resumeData = {
 				company: "SupplyCo AI",
 				dates: "Jul 2025",
 				responsibilities: [
-					"Implemented a self-onboarding flow for new users.",
-					"Added trial mode to the platform.",
-					"Added email drip campaigns with cron jobs based on leads generated for the users.",
-					"Created a mobile-friendly interface for the platform.",
+					"Eliminated founder bottleneck by implementing self-service onboarding flow, directly enabling revenue growth (previously required manual account creation for each customer).",
+					"Reduced dashboard load times by 10x (20-30 seconds → 2-3 seconds) through PostgreSQL index optimization, fixing critical performance bug.",
+					"Transformed desktop-only platform into mobile-responsive application, capturing previously inaccessible web traffic.",
+					"Built automated email drip campaigns with cron jobs for lead nurturing, replacing manual follow-ups.",
 				],
 			},
 			{
 				company: "Shrinked.ai",
 				dates: "Ongoing",
-				responsibilities: ["TBD :)"],
+				responsibilities: [
+					"Currently building a powerful AI context management system, details forthcoming.",
+				],
 			},
 		],
 	},
