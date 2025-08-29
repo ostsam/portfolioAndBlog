@@ -118,16 +118,26 @@ function ContactLinks({
 // Custom disclosure triangle component
 function DisclosureTriangle() {
 	return (
-		<svg
-			className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground dark:text-white transition-transform duration-200 [details[open]_&]:rotate-90"
-			width="16"
-			height="16"
-			viewBox="0 0 16 16"
-			fill="currentColor"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<path d="M6 2L12 8L6 14V2Z" />
-		</svg>
+		<>
+			{/* SVG triangle for modern browsers */}
+			<svg
+				className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground dark:text-white transition-transform duration-200 disclosure-triangle"
+				width="16"
+				height="16"
+				viewBox="0 0 16 16"
+				fill="currentColor"
+				xmlns="http://www.w3.org/2000/svg"
+				style={{ minWidth: "16px", minHeight: "16px" }}
+			>
+				<path d="M6 2L12 8L6 14V2Z" fill="currentColor" />
+			</svg>
+
+			{/* Fallback triangle using CSS for older browsers */}
+			<div
+				className="hidden absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground dark:text-white transition-transform duration-200 disclosure-triangle-fallback"
+				aria-hidden="true"
+			/>
+		</>
 	);
 }
 
@@ -386,26 +396,28 @@ export default function Page() {
 					<h2 className="text-2xl md:text-3xl font-semibold tracking-tighter mb-6">
 						Professional Experience
 					</h2>
-					<div className="space-y-6">
+					<div className="space-y-2">
 						{resumeData.professionalExperience.map((job, index) => (
-							<div key={index}>
-								<details>
-									<summary className="cursor-pointer list-none relative pl-6">
+							<div key={index} className="job-details-container">
+								<details className="group relative job-details">
+									<summary className="cursor-pointer list-none relative pl-6 py-1 flex flex-col sm:flex-row sm:items-center sm:justify-between w-full">
 										<DisclosureTriangle />
-										<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full">
+										<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full pr-2">
 											<span className="text-lg font-medium tracking-tight mb-1 sm:mb-0 hover:animate-pulse">
 												{job.title}
 											</span>
-											<span className="text-sm text-neutral-500 dark:text-neutral-400">
+											<span className="text-sm text-neutral-500 dark:text-neutral-400 whitespace-nowrap">
 												{job.dates}
 											</span>
 										</div>
 									</summary>
-									<ul className="list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300 mt-2">
-										{job.responsibilities.map((responsibility, respIndex) => (
-											<li key={respIndex}>{responsibility}</li>
-										))}
-									</ul>
+									<div className="p-4 pt-3">
+										<ul className="list-disc pl-6 space-y-2 text-neutral-700 dark:text-neutral-300">
+											{job.responsibilities.map((responsibility, respIndex) => (
+												<li key={respIndex}>{responsibility}</li>
+											))}
+										</ul>
+									</div>
 								</details>
 							</div>
 						))}
