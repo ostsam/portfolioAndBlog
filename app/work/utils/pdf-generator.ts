@@ -336,6 +336,17 @@ export async function generatePDF() {
 		resumeData.fractalAIAccelerator.internshipExperience.forEach(
 			(internship, index) => {
 				addJobHeader(internship.company, internship.dates, index === 0);
+
+				// Add tl;dr if available
+				if (internship.tldr) {
+					setFont("small");
+					pdf.setTextColor(colors.muted);
+					currentY = addText(internship.tldr, margin + 8, currentY, {
+						maxWidth: contentWidth - 8,
+					});
+					currentY += 8;
+				}
+
 				internship.responsibilities.forEach((responsibility) => {
 					addBulletPoint(responsibility);
 				});

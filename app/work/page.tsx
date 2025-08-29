@@ -361,6 +361,11 @@ export default function Page() {
 													{internship.dates}
 												</span>
 											</div>
+											{internship.tldr && (
+												<p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2 italic">
+													{internship.tldr}
+												</p>
+											)}
 											<ul className="list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
 												{internship.responsibilities.map(
 													(responsibility, respIndex) => (

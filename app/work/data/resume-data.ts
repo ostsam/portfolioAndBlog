@@ -96,6 +96,7 @@ export const resumeData = {
 			{
 				company: "SupplyCo AI",
 				dates: "Jul 2025",
+				tldr: "SupplyCo is a B2B SaaS which connects the manufacturers of heavy machinery with customers. I built self-service onboarding, optimized dashboard performance 10x, and made platform mobile-responsive.",
 				responsibilities: [
 					"Eliminated founder bottleneck by implementing self-service onboarding flow, directly enabling revenue growth (previously required manual account creation for each customer).",
 					"Reduced dashboard load times by 10x (30 seconds → 3 seconds) through PostgreSQL index optimization, fixing critical performance bug.",
@@ -106,6 +107,7 @@ export const resumeData = {
 			{
 				company: "Shrinked.ai",
 				dates: "Ongoing",
+				tldr: "Shrinked.ai is an AI context management platform that prevents LLM hallucinations through context management. I am developing data enrichment systems.",
 				responsibilities: [
 					"Refining the data enrichment system for the context management platform, allowing for the ingestion of many different kinds of data for the purposes of creating an AI platform free of hallucinations.",
 					"Creating a chess data ingestion system as a proof of concept for the context management platform, allowing users to query the database for higher-level chess analysis and reports derived therefrom.",
