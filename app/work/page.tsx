@@ -44,11 +44,15 @@ function ContactLink({ href, icon, text, className = "" }: ContactLinkProps) {
 			href={href}
 			target="_blank"
 			rel="noopener noreferrer"
-			className={`cursor-pointer text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2 ${className}`}
+			className={`cursor-pointer text-neutral-600 dark:text-neutral-300 hover:text-foreground active:text-foreground transition-colors duration-200 ${className}`}
 		>
 			<span className="flex items-center gap-1.5">
 				{icon}
-				<span className={className}>{text}</span>
+				<span
+					className={`underline underline-offset-4 hover:underline-offset-2 ${className}`}
+				>
+					{text}
+				</span>
 			</span>
 		</Link>
 	);

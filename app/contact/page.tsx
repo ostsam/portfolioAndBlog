@@ -67,8 +67,6 @@ export default function ContactPage() {
 			<form
 				onSubmit={handleSubmit}
 				className="space-y-6 animate-in slide-in-from-bottom-4 duration-1000 delay-200"
-				action="https://formspree.io/f/mvgqlped"
-				method="POST"
 			>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 					<div>
