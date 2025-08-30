@@ -281,7 +281,7 @@ export default function Page() {
 					<h2 className="text-2xl md:text-3xl font-semibold tracking-tighter mb-0.5">
 						{resumeData.fractalAIAccelerator.title}
 					</h2>
-					<p className="text-sm text-neutral-500 dark:text-neutral-400 mb-6">
+					<p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4">
 						{resumeData.fractalAIAccelerator.dates}
 					</p>
 
@@ -314,6 +314,12 @@ export default function Page() {
 								>
 									View curriculum →
 								</Link>
+								<p className="text-md font-medium italic text-neutral-300 dark:text-neutral-300 my-4">
+									{resumeData.fractalAIAccelerator.blurb}{" "}
+									<span className="text-medium text-neutral-500 dark:text-neutral-400 not-italic">
+										- Andrew Rose, Founder of Fractal
+									</span>
+								</p>
 							</p>
 						</div>
 

@@ -84,6 +84,8 @@ export async function generatePDF() {
 		};
 
 		const addText = (text: string, x: number, y: number, options: any = {}) => {
+			const align = options.align || 'left';
+
 			if (options.maxWidth) {
 				const lines = pdf.splitTextToSize(text, options.maxWidth);
 				if (Array.isArray(lines)) {
@@ -94,7 +96,28 @@ export async function generatePDF() {
 						currentY = y;
 					}
 					lines.forEach((line: string, index: number) => {
-						pdf.text(line, x, y + index * lineHeight);
+						if (align === 'justify' && index < lines.length - 1) {
+							// Justify all lines except the last one
+							const words = line.trim().split(/\s+/);
+							if (words.length > 1) {
+								const totalTextWidth = words.reduce((sum, word) => sum + pdf.getTextWidth(word), 0);
+								const totalSpaceWidth = options.maxWidth - totalTextWidth;
+								const spaceWidth = totalSpaceWidth / (words.length - 1);
+
+								let currentX = x;
+								words.forEach((word, wordIndex) => {
+									pdf.text(word, currentX, y + index * lineHeight);
+									if (wordIndex < words.length - 1) {
+										currentX += pdf.getTextWidth(word) + spaceWidth;
+									}
+								});
+							} else {
+								pdf.text(line, x, y + index * lineHeight);
+							}
+						} else {
+							// Left align for single words or last line
+							pdf.text(line, x, y + index * lineHeight);
+						}
 					});
 					return y + lines.length * lineHeight + 2;
 				}
@@ -145,6 +168,7 @@ export async function generatePDF() {
 			pdf.setTextColor(colors.secondary);
 			const textY = addText(text, margin + 16, currentY, {
 				maxWidth: contentWidth - 16,
+				align: 'justify'
 			});
 			currentY = textY + 2;
 		};
@@ -187,6 +211,7 @@ export async function generatePDF() {
 		pdf.setTextColor(colors.secondary);
 		currentY = addText(resumeData.professionalSummary, margin, currentY, {
 			maxWidth: contentWidth,
+			align: 'justify'
 		});
 
 		// Technical Skills
@@ -293,6 +318,7 @@ export async function generatePDF() {
 			currentY,
 			{
 				maxWidth: contentWidth,
+				align: 'justify'
 			}
 		);
 		currentY += 10;
@@ -322,6 +348,7 @@ export async function generatePDF() {
 		pdf.setTextColor(colors.secondary);
 		currentY = addText(malanProject.description, margin + 8, currentY, {
 			maxWidth: contentWidth - 8,
+			align: 'justify'
 		});
 		currentY += 12;
 
