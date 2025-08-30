@@ -74,6 +74,7 @@ export const resumeData = {
 
 	fractalAIAccelerator: {
 		title: "Fractal AI Accelerator",
+		blurb: `"Sam started Fractal with two months of coding experience, easily the least technical person in the cohort. During week 4, Sam began building Malan, which was genuinely the best project ever shipped by anybody in the program. From zero to a working language learning app for 57 languages. That progression shouldn't be possible, but here we are. Sam approaches problems like someone who's been doing this for years."`,
 		dates: "Jun 2025 – Aug 2025",
 		overview: {
 			description:
@@ -99,7 +100,7 @@ export const resumeData = {
 				tldr: "SupplyCo is a B2B SaaS which connects the manufacturers of heavy machinery with customers. I built self-service onboarding, optimized dashboard performance 10x, and made platform mobile-responsive.",
 				responsibilities: [
 					"Eliminated founder bottleneck by implementing self-service onboarding flow, directly enabling revenue growth (previously required manual account creation for each customer).",
-					"Reduced dashboard load times by 10x (30 seconds → 3 seconds) through PostgreSQL index optimization, fixing critical performance bug.",
+					"Reduced dashboard load times by 10x (from 30 to 3 seconds) through PostgreSQL index optimization, fixing critical performance bug.",
 					"Transformed desktop-only platform into mobile-responsive application, capturing previously inaccessible web traffic.",
 					"Built automated email drip campaigns with cron jobs for lead nurturing, replacing manual follow-ups.",
 				],
